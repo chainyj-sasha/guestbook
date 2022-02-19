@@ -6,9 +6,12 @@
 
 @section('content')
 
-    @foreach($messages as $message)
-       <p>{{ $message->guest['name'] }}. {{ $message->text }}.  Дата: {{ $message->created_at }}</p>
 
+
+    @foreach($messages as $message)
+           @if(isset($message->text))
+               <p>{{ $message->guest['name'] }}. {{ $message->text }}.  Дата: {{ $message->created_at }}</p>
+           @endif
     @endforeach
 
     <form action="" method="POST">
