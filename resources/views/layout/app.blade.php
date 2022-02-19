@@ -8,12 +8,15 @@
     <title>@yield('title')</title>
 </head>
 <body>
+@if(isset($flash))
+    {{ $flash }}
+@endif
 
-@include('')
+@include('header.header')
 
 @yield('content')
 
-@include('')
+@include('footer.footer')
 
 </body>
 </html>
